@@ -1,0 +1,25 @@
+name: numradar
+type: remote
+dynamic:
+  tools: true
+meta:
+  category: communication
+  tags:
+    - communication
+    - whatsapp
+    - phone-validation
+    - remote
+about:
+  title: NumRadar
+  description: Check WhatsApp registration for phone numbers, run bulk validation jobs, and retrieve results. Requires a NumRadar paid plan and API key.
+  icon: https://www.google.com/s2/favicons?domain=numradar.app&sz=64
+remote:
+  transport_type: streamable-http
+  url: https://numradar.app/mcp
+  headers:
+    Authorization: "Bearer ${NUMRADAR_KEY}"
+config:
+  secrets:
+    - name: numradar.api_key
+      env: NUMRADAR_KEY
+      example: <NUMRADAR_KEY>
